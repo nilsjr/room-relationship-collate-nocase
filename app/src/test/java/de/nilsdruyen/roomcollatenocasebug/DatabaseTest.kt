@@ -47,13 +47,34 @@ class DatabaseTest {
     }
 
     @Test
-    fun `Test userWithBooks is fetched case insensitive`() = runTest {
+    fun `Test userWithBooks is fetched case insensitive WRONG`() = runTest {
         db.userDao().set(User("nils", "Name"))
         db.bookDao().set(Book("book1", "nils", "Book1"))
         db.bookDao().set(Book("book2", "NILS", "Book2"))
 
         // should be 2 with collate = ColumnInfo.NOCASE
         val expected = 1
+
+        db.userDao().getWithBooks("nils").test {
+            assert(awaitItem().first().books.size == expected)
+        }
+        db.userDao().getWithBooks("NILS").test {
+            assert(awaitItem().first().books.size == expected)
+        }
+        db.userDao().getWithBooks("Nils").test {
+            assert(awaitItem().first().books.size == expected)
+        }
+    }
+
+    @Ignore("Ignored because bug ")
+    @Test
+    fun `Test userWithBooks is fetched case insensitive`() = runTest {
+        db.userDao().set(User("nils", "Name"))
+        db.bookDao().set(Book("book1", "nils", "Book1"))
+        db.bookDao().set(Book("book2", "NILS", "Book2"))
+
+        // should be 2 with collate = ColumnInfo.NOCASE
+        val expected = 2
 
         db.userDao().getWithBooks("nils").test {
             assert(awaitItem().first().books.size == expected)
