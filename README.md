@@ -5,9 +5,9 @@ issue.
 
 Link: (Issue Tracker)[https://issuetracker.google.com/issues/326258556]
 
-## description
+## Description
 
-One to many relation between User & Books. Field "id" is marked as collate = ColumnInfo.NOCASE in
+UserWithBooks setups relation between one user and multiple books. Field "id" is marked as collate = ColumnInfo.NOCASE in
 User & "uid" in Book entity.
 
 Prepopulated data:
