@@ -3,7 +3,7 @@
 This repository contains minimal code to reproduce a room relationship with collate no case related
 issue.
 
-Link: (Issue Tracker)[https://issuetracker.google.com/issues/326258556]
+Issue Tracker: https://issuetracker.google.com/issues/326258556
 
 ## Description
 
