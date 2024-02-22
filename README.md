@@ -14,12 +14,14 @@ Prepopulated data:
 ![User table](/images/user-table.png)
 ![Book table](/images/book-table.png)
 
-Actual:
-Query books with Nils, nils or NILS results in the same list of books
-Query user with books with Nils, nils or NILS results in different sized lists.
+**Actual:**
 
-Expected:
-Query user with books with Nils, nils or NILS results
+- Query books with Nils, nils or NILS results in the same list of books
+- Query user with books with Nils, nils or NILS results in different sized lists.
+
+**Expected:**
+
+- Query user with books with Nils, nils or NILS results
 
 See also DatabaseTest.kt
 
