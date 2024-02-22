@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "RoomCollateNoCaseBug"
+rootProject.name = "room-relationship-collate-nocase-bug"
 include(":app")
  
